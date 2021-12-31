@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+<header>Szczegóły łodzi:<br>{{Boatdata[0][0]}}</header>
+    <div class="row">
+        <aside class="col-lg-3">
+            <img style="display: block; margin: 0 auto;" width="auto" height="300px"
+                 src="static/{{Boatdata[0][1]}}" alt="jacht">
+        </aside>
+        <div class="col-lg-1"></div>
+        <article class="col-lg-8">
+            <article>
+                <header class="SubArticle">Zarezerwuj</header>
+                {% for message in get_flashed_messages() %}
+                    <div class="{{ Alertclass }}">{{ message }}</div>
+                {% endfor %}
+                <form style method="post">
+                    <input type="date" name="od"
+                           placeholder="Data początku rezerwacji"
+                           value="{{ request.form['od'] }}"></input>
+                    <br>
+                    <input type="date" name="do"
+                           placeholder="Data końca rezerwacji"
+                           value="{{ request.form['do'] }}"></input>
+                    <br>
+                    <input type="text" name="imie"
+                           placeholder="Imię"
+                           value="{{ request.form['imie'] }}"></input>
+                    <br>
+                    <input type="text" name="nazwisko"
+                           placeholder="Nazwisko"
+                           value="{{ request.form['nazwisko'] }}"></input>
+                    <br>
+                    <input type="text" name="nr"
+                           placeholder="Numer telefonu"
+                           value="{{ request.form['nr'] }}"></input>
+                    <br>
+                    <div id="wrapper">
+                      <button id="button-reserve" class="btn btn-success center" type="submit">Rezerwuj</button>
+                    </div>
+
+                </form>
+            </article>
+            <article>
+                <ul>
+                {% for record in Boatreservation %}
+                    <li>Niedostępny: {{record[0]}} - {{record[1]}}</li>
+                {% endfor %}
+                </ul>
+            </article>
+            <article>
+                <i>Typ jachtu: {{Boatdata[0][2]}}</i> <br><br>
+                {{Boatdata[0][3]}}
+            </article>
+        </article>
+        <footer class="col-lg-12">509-666-989</footer>
+    </div>
+{% endblock content %}
+

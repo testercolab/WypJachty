@@ -1,0 +1,59 @@
+<!--MacroComponents-->
+{% macro newComponent(text) -%}
+      <div class='container'><p>{{text}}</p></div>
+{%- endmacro %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    {% if title %}
+        <title>YachteX - {{title}}</title>
+    {% else %}
+        <title>YachteX</title>
+    {% endif %}
+</head>
+<body class="CSubColor">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <nav class="navbar navbar-expand-lg navbar-dark CMainColor">
+      <a class="navbar-brand" id="CompanyName" href="#">YachteX</a>
+      <div class=" " id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="\StronaGlowna">Strona Główna <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="\Oferta">Oferta <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="\OFirmie">O Firmie <span class="sr-only"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br><br>
+    <article class="row col-lg-12">
+        <div class="col-lg-1">
+        </div>
+        <div class="card col-lg-10">
+            <div class="card-body">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div class="col-lg-1">
+        </div>
+    </article>
+
+
+</body>
+</html>

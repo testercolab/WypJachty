@@ -1,0 +1,95 @@
+/*Zmienne kolorów*/
+:root {
+    --MainColor: #180857;
+    --SubColor: #38458f;
+    --NeutralColor: Whitesmoke;
+}
+/*UStawienia całego okna (body)*/
+body{
+    background-image: url("tlo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+}
+/*Ustawienia klas kolorów*/
+.CMainColor{
+    background-color: var(--MainColor) !important;
+}
+
+.CSubColor{
+    background-color: var(--SubColor) !important;
+}
+/*Dodanie czegos do klas bootstrapowych*/
+.card{
+    background: rgb(255,255,255, .7)
+}
+/*Pasek nawigacji*/
+#navbarSupportedContent{
+    position:relative; left:60%; width:auto;
+}
+
+#CompanyName{
+    position:relative; left:80px;
+}
+/*Globalne ustawienia dla elementow HTML5*/
+header{
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+aside{
+    /*border-style: solid;*/
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.SubArticle{
+    font-weight: 500;
+    font-size: 30px;
+}
+/*webforms*/
+input{
+  margin-bottom: 10px;
+  width: 100%;
+}
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*inne*/
+#imgzal{
+        background-image: url("zal.png");
+}
+#SGstart{
+    text-align: center;
+    font-size: 25px;
+}
+
+.Ofertajacht{
+    background-color: var(--NeutralColor);
+    box-shadow: 10px 10px 5px grey;
+    margin: 45px;
+
+    width: 90%
+}
+.AlertBad{
+    padding: 20px;
+    margin: 5px;
+    color: #970020;
+    background-color: #dc3545;
+}
+
+.AlertGood{
+    padding: 20px;
+    margin: 5px;
+    color: #970020;
+    background-color: #28a745;
+}
